@@ -5,10 +5,7 @@ namespace CSQA
 {
     public class Interview
     {
-        public Interview()
-        {
-
-        }
+        public Interview() { }
 
         public Person PersonInfo { get; set; }
 
@@ -43,7 +40,7 @@ namespace CSQA
                     Console.WriteLine($"{i}-{itemAnswers}");
                     i++;
                 }
-                // var indexAnswer = Int32.Parse(Console.ReadLine());
+
                 int indexAnswer;
 
                 while (true)
@@ -55,22 +52,18 @@ namespace CSQA
                     }
                     Console.WriteLine("Не правильный ввод");
                 }
-
-                // while (!Int32.TryParse(Console.ReadLine(), out indexAnswer) && indexAnswer>itemQuestion.AnswerOptions.Count)
-                // {
-                //     Console.WriteLine("Введите число");
-                // }
                 PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
             }
             Console.WriteLine("Конец опроса");
         }
+
         void GetPersonInfo()
         {
             Console.WriteLine("Введите имя: ");
             var name = Console.ReadLine();
             PersonInfo.Name = name;
-
         }
+
         public void InitTest()
         {
             var question1 = new ItemQuestion
@@ -83,6 +76,7 @@ namespace CSQA
                 "Ответ В"
                 }
             };
+
             var question2 = new ItemQuestion
             {
                 Question = "Вопрос 2",
@@ -100,6 +94,5 @@ namespace CSQA
                 question2
             };
         }
-
     }
 }

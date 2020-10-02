@@ -11,13 +11,13 @@ namespace CSQA
 
             do
             {
-            interview.Start();
-            interview.Result();
-            Console.WriteLine("Чтобы завершить опрос нажмите - {Q}");
-            Console.WriteLine("Для продолжения опроса нажмите любую клавишу");
+                interview.Start();
+                interview.Result();
+                Console.WriteLine("Чтобы завершить опрос нажмите - {Q}");
+                Console.WriteLine("Для продолжения опроса нажмите любую клавишу");
             }
-            while(ConsoleKey.Q != Console.ReadKey(true).Key);
-            
+            while (ConsoleKey.Q != Console.ReadKey(true).Key);
+
         }
     }
 }

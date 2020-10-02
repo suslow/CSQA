@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\IT\\test2\\test2.csproj",
-      "projectName": "test2",
-      "projectPath": "D:\\IT\\test2\\test2.csproj",
+      "projectUniqueName": "D:\\IT\\CSQA\\CSQA.csproj",
+      "projectName": "CSQA",
+      "projectPath": "D:\\IT\\CSQA\\CSQA.csproj",
       "packagesPath": "C:\\Users\\Влад\\.nuget\\packages\\",
-      "outputPath": "D:\\IT\\test2\\obj\\",
+      "outputPath": "D:\\IT\\CSQA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Влад\\AppData\\Roaming\\NuGet\\NuGet.Config"
