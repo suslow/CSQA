@@ -41,18 +41,19 @@ namespace CSQA
                     i++;
                 }
 
-                // int indexAnswer;
+                int indexAnswer;
 
-                // while (true)
-                // {
-                //     var res = Int32.TryParse(Console.ReadLine(), out indexAnswer);
-                //     if (res && indexAnswer > 0 && indexAnswer <= itemQuestion.AnswerOptions.Count)
-                //     {
-                //         break;
-                //     }
-                //     Console.WriteLine("Не правильный ввод");
-                // }
-                // PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
+                while (true)
+                {
+                    var res = Int32.TryParse(Console.ReadLine(), out indexAnswer);
+                    if (res && indexAnswer > 0 && indexAnswer <= itemQuestion.AnswerOptions.Count)
+                    {
+                        break;
+                    }
+                    Console.WriteLine("Не правильный ввод");
+                    KeyPress();
+                }
+                PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
 
 
             }
