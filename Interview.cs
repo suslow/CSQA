@@ -23,7 +23,7 @@ namespace CSQA
 
         public List<ItemQuestion> Questions { get; set; }
 
-        public void Start()
+        public void Start(object sender, KeyPressEventArgs e)
         {
             PersonInfo = new Person();
 
@@ -41,20 +41,30 @@ namespace CSQA
                     i++;
                 }
 
-                int indexAnswer;
+                // int indexAnswer;
 
-                while (true)
-                {
-                    var res = Int32.TryParse(Console.ReadLine(), out indexAnswer);
-                    if (res && indexAnswer > 0 && indexAnswer <= itemQuestion.AnswerOptions.Count)
-                    {
-                        break;
-                    }
-                    Console.WriteLine("Не правильный ввод");
-                }
-                PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
+                // while (true)
+                // {
+                //     var res = Int32.TryParse(Console.ReadLine(), out indexAnswer);
+                //     if (res && indexAnswer > 0 && indexAnswer <= itemQuestion.AnswerOptions.Count)
+                //     {
+                //         break;
+                //     }
+                //     Console.WriteLine("Не правильный ввод");
+                // }
+                // PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
+
+
             }
             Console.WriteLine("Конец опроса");
+        }
+
+        public void KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Key = new KeyPressEventArgs();
+
+            if (e.KeyChar <= 48 || e.KeyChar >= 52)
+            e.Handled = true;
         }
 
         void GetPersonInfo()
