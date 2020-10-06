@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+
 namespace CSQA
 {
     public class Interview
@@ -23,7 +24,7 @@ namespace CSQA
 
         public List<ItemQuestion> Questions { get; set; }
 
-        public void Start(object sender, KeyPressEventArgs e)
+        public void Start()
         {
             PersonInfo = new Person();
 
@@ -43,15 +44,16 @@ namespace CSQA
 
                 // int indexAnswer;
 
-                // while (true)
-                // {
-                //     var res = Int32.TryParse(Console.ReadLine(), out indexAnswer);
-                //     if (res && indexAnswer > 0 && indexAnswer <= itemQuestion.AnswerOptions.Count)
-                //     {
-                //         break;
-                //     }
-                //     Console.WriteLine("Не правильный ввод");
-                // }
+                while (true)
+                {
+                    // var res = Int32.TryParse(Console.ReadLine(), out indexAnswer);
+                    // if (res && indexAnswer > 0 && indexAnswer <= itemQuestion.AnswerOptions.Count)
+                    // {
+                    //     break;
+                    // }
+                    // Console.WriteLine("Не правильный ввод");
+                    KeyPress();
+                }
                 // PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
 
 
@@ -59,12 +61,38 @@ namespace CSQA
             Console.WriteLine("Конец опроса");
         }
 
-        public void KeyPress(object sender, KeyPressEventArgs e)
+        public void KeyPress()
         {
-            Key = new KeyPressEventArgs();
+            char alpha;
+            for (int i = 0; i < 26; i++)
+            {
+                alpha = Convert.ToChar(i + 65);
+                System.Console.WriteLine(alpha);
+            }
 
-            if (e.KeyChar <= 48 || e.KeyChar >= 52)
-            e.Handled = true;
+
+            // int index;
+            // var number = Int32.TryParse(Console.ReadLine(), out index);
+            // var e = new KeyPressEventArgs();
+            // index = e.KeyChar;
+
+            // if (e.KeyChar >= 52 || e.KeyChar <= 57)
+            // {
+            //     e.Handled = true;
+            //     Console.WriteLine("Неправильный ввод. Введите значение в диапазоне 1-3.");
+            // }
+
+            // if (e.KeyChar >= 65 || e.KeyChar <= 122)
+            // {
+            //     e.Handled = true;
+            //     Console.WriteLine("Неправильный ввод. Буквы для ввода не допступны.");
+            // }
+
+            // if (e.KeyChar >= 33 || e.KeyChar <= 47 && e.KeyChar >= 58 || e.KeyChar <= 64)
+            // {
+            //     e.Handled = true;
+            //     Console.WriteLine("Неправильный ввод. Символы для ввода не доступны.");
+            // }
         }
 
         void GetPersonInfo()
