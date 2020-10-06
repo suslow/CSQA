@@ -55,8 +55,6 @@ namespace CSQA
                     KeyPress();
                 }
                 // PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
-
-
             }
             Console.WriteLine("Конец опроса");
         }
