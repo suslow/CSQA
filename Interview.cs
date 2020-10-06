@@ -59,14 +59,14 @@ namespace CSQA
             Console.WriteLine("Конец опроса");
         }
 
+        char alpha;
         public void KeyPress()
         {
-            char alpha;
             for (int i = 0; i < 26; i++)
             {
                 alpha = Convert.ToChar(i + 65);
-                System.Console.WriteLine(alpha);
             }
+            System.Console.WriteLine(alpha);
 
 
             // int index;
