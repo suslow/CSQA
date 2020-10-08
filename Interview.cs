@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace CSQA
 {
@@ -44,29 +44,90 @@ namespace CSQA
 
                 // int indexAnswer;
 
+                // while (true)
+                // {
+                //     var res = Int32.TryParse(Console.ReadLine(), out indexAnswer);
+                //     if (res && indexAnswer > 0 && indexAnswer <= itemQuestion.AnswerOptions.Count)
+                //     {
+                //         break;
+                //     }
+                //     Console.WriteLine("Не правильный ввод");
+                //     // KeyPress();
+                // }
+                // PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
+
+
+                char[] alpha_A = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+                char[] alpha_a = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+                char[] num = "4567890!()+_-={}[]<>/?.,|".ToCharArray();
+
+                var res = Convert.ToChar(Console.ReadLine());
                 while (true)
                 {
-                    // var res = Int32.TryParse(Console.ReadLine(), out indexAnswer);
-                    // if (res && indexAnswer > 0 && indexAnswer <= itemQuestion.AnswerOptions.Count)
-                    // {
-                    //     break;
-                    // }
-                    // Console.WriteLine("Не правильный ввод");
-                    KeyPress();
+                    if (alpha_A.Contains(res))
+                    {
+                        Console.WriteLine("Ввод заглавных букв ограничен");
+                    }
+                    if (alpha_a.Contains(res))
+                    {
+                        Console.WriteLine("Ввод строчных букв ограничен");
+                    }
+                    if (num.Contains(res))
+                    {
+                        Console.WriteLine("Ввод ограничен диапазоном 1-3");
+                    }
+                    PersonInfo.Answers.Add(itemQuestion.AnswerOptions[res-1]);
                 }
-                // PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
             }
             Console.WriteLine("Конец опроса");
         }
 
-        public void KeyPress()
-        {
-            char alpha;
-            for (int i = 0; i < 26; i++)
-            {
-                alpha = Convert.ToChar(i + 65);
-                System.Console.WriteLine(alpha);
-            }
+        // char alpha;
+        // int num;
+        // public void NA()
+        // {
+        //     for (int i = 0; i < 26; i++)
+        //     {
+        //         alpha = Convert.ToChar(i + 65);
+        //     }
+        //         Console.WriteLine(alpha);
+
+        //     for (int l = 4; l <= 9; l++)
+        //     {
+        //         num[] = l;
+        //     }
+        //         Console.WriteLine(num);
+
+        // }
+
+
+        // char[] alpha_A = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+        //     char[] alpha_a = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+        //     char[] num = "4567890!()+_-={}[]<>/?.,|".ToCharArray();
+        //     // Console.WriteLine(alpha);
+        //     // foreach (char ch in alpha)
+        //     // {
+        //     //     Console.WriteLine(ch);
+        //     // }
+        //     Console.WriteLine("Ввод:");
+        //     var res = Convert.ToChar(Console.ReadLine());
+        //     if (alpha_A.Contains(res))
+        //     {
+        //         Console.WriteLine("Ввод заглавных букв ограничен");
+        //     }
+        //     if (alpha_a.Contains(res))
+        //     {
+        //         Console.WriteLine("Ввод строчных букв ограничен");
+        //     }
+        //     if (num.Contains(res))
+        //     {
+        //         Console.WriteLine("Ввод ограничен диапазоном 1-3");
+        //     }
+
+
+
+        // public void KeyPress()
+        // {
 
 
             // int index;
@@ -91,13 +152,29 @@ namespace CSQA
             //     e.Handled = true;
             //     Console.WriteLine("Неправильный ввод. Символы для ввода не доступны.");
             // }
-        }
+        // }
 
         void GetPersonInfo()
         {
             Console.WriteLine("Введите имя: ");
             var name = Console.ReadLine();
             PersonInfo.Name = name;
+
+            bool result;
+            result = Char.IsUpper(name, 0);
+
+
+            while (result == false)
+            {
+                Console.WriteLine("Вводите с заглавной буквы");
+                break;
+                // if (result == false)
+                // {
+                //     break;
+                // }
+            }
+
+
         }
 
         public void InitTest()
