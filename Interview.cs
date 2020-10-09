@@ -66,12 +66,16 @@ namespace CSQA
                 char[] alpha_a = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
                 char[] num = "4567890!()+_-={}[]<>/?.,|".ToCharArray();
 
+                // res = Convert.ToChar(Console.ReadLine());
                 char res;
                 while (true)
                 {
-                    res = Convert.ToChar(Console.ReadLine());
-
-                    if (alpha_A.Contains(res))
+                    var chk = Char.TryParse(Console.ReadLine(), out res);
+                    if (chk == false)
+                    {
+                        Console.WriteLine("Не правильный ввод. Допускается ввод только одного символа.");
+                    }
+                    else if (alpha_A.Contains(res))
                     {
                         Console.WriteLine("Ввод заглавных букв ограничен");
                     }

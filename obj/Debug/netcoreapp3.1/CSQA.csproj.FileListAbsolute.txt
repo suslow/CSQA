@@ -9,3 +9,5 @@ D:\IT\CSQA\obj\Debug\netcoreapp3.1\CSQA.AssemblyInfoInputs.cache
 D:\IT\CSQA\obj\Debug\netcoreapp3.1\CSQA.AssemblyInfo.cs
 D:\IT\CSQA\obj\Debug\netcoreapp3.1\CSQA.dll
 D:\IT\CSQA\obj\Debug\netcoreapp3.1\CSQA.pdb
+D:\IT\CSQA\obj\Debug\netcoreapp3.1\CSQA.csproj.CoreCompileInputs.cache
+D:\IT\CSQA\obj\Debug\netcoreapp3.1\CSQA.genruntimeconfig.cache
