@@ -8,6 +8,11 @@ namespace CSQA
     {
         public Interview() { }
 
+        public Interview(Person personInfo)
+        {
+            this.PersonInfo = personInfo;
+
+        }
         public Person PersonInfo { get; set; }
 
         internal void Result()
@@ -61,23 +66,30 @@ namespace CSQA
                 char[] alpha_a = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
                 char[] num = "4567890!()+_-={}[]<>/?.,|".ToCharArray();
 
-                var res = Convert.ToChar(Console.ReadLine());
+                char res;
                 while (true)
                 {
+                    res = Convert.ToChar(Console.ReadLine());
+
                     if (alpha_A.Contains(res))
                     {
                         Console.WriteLine("Ввод заглавных букв ограничен");
                     }
-                    if (alpha_a.Contains(res))
+                    else if (alpha_a.Contains(res))
                     {
                         Console.WriteLine("Ввод строчных букв ограничен");
                     }
-                    if (num.Contains(res))
+                    else if (num.Contains(res))
                     {
                         Console.WriteLine("Ввод ограничен диапазоном 1-3");
                     }
-                    PersonInfo.Answers.Add(itemQuestion.AnswerOptions[res-1]);
+                    else
+                    {
+                        break;
+                    }
                 }
+                int indexAnswer = (int)Char.GetNumericValue(res);
+                PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
             }
             Console.WriteLine("Конец опроса");
         }
@@ -130,51 +142,49 @@ namespace CSQA
         // {
 
 
-            // int index;
-            // var number = Int32.TryParse(Console.ReadLine(), out index);
-            // var e = new KeyPressEventArgs();
-            // index = e.KeyChar;
+        // int index;
+        // var number = Int32.TryParse(Console.ReadLine(), out index);
+        // var e = new KeyPressEventArgs();
+        // index = e.KeyChar;
 
-            // if (e.KeyChar >= 52 || e.KeyChar <= 57)
-            // {
-            //     e.Handled = true;
-            //     Console.WriteLine("Неправильный ввод. Введите значение в диапазоне 1-3.");
-            // }
+        // if (e.KeyChar >= 52 || e.KeyChar <= 57)
+        // {
+        //     e.Handled = true;
+        //     Console.WriteLine("Неправильный ввод. Введите значение в диапазоне 1-3.");
+        // }
 
-            // if (e.KeyChar >= 65 || e.KeyChar <= 122)
-            // {
-            //     e.Handled = true;
-            //     Console.WriteLine("Неправильный ввод. Буквы для ввода не допступны.");
-            // }
+        // if (e.KeyChar >= 65 || e.KeyChar <= 122)
+        // {
+        //     e.Handled = true;
+        //     Console.WriteLine("Неправильный ввод. Буквы для ввода не допступны.");
+        // }
 
-            // if (e.KeyChar >= 33 || e.KeyChar <= 47 && e.KeyChar >= 58 || e.KeyChar <= 64)
-            // {
-            //     e.Handled = true;
-            //     Console.WriteLine("Неправильный ввод. Символы для ввода не доступны.");
-            // }
+        // if (e.KeyChar >= 33 || e.KeyChar <= 47 && e.KeyChar >= 58 || e.KeyChar <= 64)
+        // {
+        //     e.Handled = true;
+        //     Console.WriteLine("Неправильный ввод. Символы для ввода не доступны.");
+        // }
         // }
 
         void GetPersonInfo()
         {
-            Console.WriteLine("Введите имя: ");
-            var name = Console.ReadLine();
-            PersonInfo.Name = name;
-
             bool result;
-            result = Char.IsUpper(name, 0);
-
-
-            while (result == false)
+            while (true)
             {
-                Console.WriteLine("Вводите с заглавной буквы");
-                break;
-                // if (result == false)
-                // {
-                //     break;
-                // }
+                Console.WriteLine("Введите имя: ");
+                var name = Console.ReadLine();
+                PersonInfo.Name = name;
+
+                result = Char.IsUpper(name, 0);
+                if (result == false)
+                {
+                    Console.WriteLine("Вводите с заглавной буквы");
+                }
+                else
+                {
+                    break;
+                }
             }
-
-
         }
 
         public void InitTest()
