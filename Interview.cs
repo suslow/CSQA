@@ -47,26 +47,10 @@ namespace CSQA
                     i++;
                 }
 
-                // int indexAnswer;
-
-                // while (true)
-                // {
-                //     var res = Int32.TryParse(Console.ReadLine(), out indexAnswer);
-                //     if (res && indexAnswer > 0 && indexAnswer <= itemQuestion.AnswerOptions.Count)
-                //     {
-                //         break;
-                //     }
-                //     Console.WriteLine("Не правильный ввод");
-                //     // KeyPress();
-                // }
-                // PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
-
-
                 char[] alpha_A = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
                 char[] alpha_a = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
                 char[] num = "4567890!()+_-={}[]<>/?.,|".ToCharArray();
 
-                // res = Convert.ToChar(Console.ReadLine());
                 char res;
                 while (true)
                 {
@@ -97,78 +81,6 @@ namespace CSQA
             }
             Console.WriteLine("Конец опроса");
         }
-
-        // char alpha;
-        // int num;
-        // public void NA()
-        // {
-        //     for (int i = 0; i < 26; i++)
-        //     {
-        //         alpha = Convert.ToChar(i + 65);
-        //     }
-        //         Console.WriteLine(alpha);
-
-        //     for (int l = 4; l <= 9; l++)
-        //     {
-        //         num[] = l;
-        //     }
-        //         Console.WriteLine(num);
-
-        // }
-
-
-        // char[] alpha_A = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
-        //     char[] alpha_a = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-        //     char[] num = "4567890!()+_-={}[]<>/?.,|".ToCharArray();
-        //     // Console.WriteLine(alpha);
-        //     // foreach (char ch in alpha)
-        //     // {
-        //     //     Console.WriteLine(ch);
-        //     // }
-        //     Console.WriteLine("Ввод:");
-        //     var res = Convert.ToChar(Console.ReadLine());
-        //     if (alpha_A.Contains(res))
-        //     {
-        //         Console.WriteLine("Ввод заглавных букв ограничен");
-        //     }
-        //     if (alpha_a.Contains(res))
-        //     {
-        //         Console.WriteLine("Ввод строчных букв ограничен");
-        //     }
-        //     if (num.Contains(res))
-        //     {
-        //         Console.WriteLine("Ввод ограничен диапазоном 1-3");
-        //     }
-
-
-
-        // public void KeyPress()
-        // {
-
-
-        // int index;
-        // var number = Int32.TryParse(Console.ReadLine(), out index);
-        // var e = new KeyPressEventArgs();
-        // index = e.KeyChar;
-
-        // if (e.KeyChar >= 52 || e.KeyChar <= 57)
-        // {
-        //     e.Handled = true;
-        //     Console.WriteLine("Неправильный ввод. Введите значение в диапазоне 1-3.");
-        // }
-
-        // if (e.KeyChar >= 65 || e.KeyChar <= 122)
-        // {
-        //     e.Handled = true;
-        //     Console.WriteLine("Неправильный ввод. Буквы для ввода не допступны.");
-        // }
-
-        // if (e.KeyChar >= 33 || e.KeyChar <= 47 && e.KeyChar >= 58 || e.KeyChar <= 64)
-        // {
-        //     e.Handled = true;
-        //     Console.WriteLine("Неправильный ввод. Символы для ввода не доступны.");
-        // }
-        // }
 
         void GetPersonInfo()
         {
