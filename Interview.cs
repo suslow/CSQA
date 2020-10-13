@@ -49,12 +49,14 @@ namespace CSQA
 
                 char[] alpha_A = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
                 char[] alpha_a = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-                char[] num = "4567890!()+_-={}[]<>/?.,|".ToCharArray();
+                char[] num = "0!()+_-={}[]<>/?.,|@#$%^&*".ToCharArray();
 
                 char res;
+                int indexAnswer;
                 while (true)
                 {
                     var chk = Char.TryParse(Console.ReadLine(), out res);
+                    indexAnswer = (int)Char.GetNumericValue(res);
                     if (chk == false)
                     {
                         Console.WriteLine("Не правильный ввод. Допускается ввод только одного символа.");
@@ -67,6 +69,10 @@ namespace CSQA
                     {
                         Console.WriteLine("Ввод строчных букв ограничен");
                     }
+                    else if (indexAnswer > itemQuestion.AnswerOptions.Count)
+                    {
+                        Console.WriteLine("Ввод ограничен диапазоном 1-3");
+                    }
                     else if (num.Contains(res))
                     {
                         Console.WriteLine("Ввод ограничен диапазоном 1-3");
@@ -76,7 +82,6 @@ namespace CSQA
                         break;
                     }
                 }
-                int indexAnswer = (int)Char.GetNumericValue(res);
                 PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
             }
             Console.WriteLine("Конец опроса");
