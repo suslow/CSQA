@@ -71,11 +71,11 @@ namespace CSQA
                     }
                     else if (indexAnswer > itemQuestion.AnswerOptions.Count)
                     {
-                        Console.WriteLine("Ввод ограничен диапазоном 1-3");
+                        Console.WriteLine($"Ввод ограничен диапазоном 1-{itemQuestion.AnswerOptions.Count}");
                     }
                     else if (num.Contains(res))
                     {
-                        Console.WriteLine("Ввод ограничен диапазоном 1-3");
+                        Console.WriteLine($"Ввод ограничен диапазоном 1-{itemQuestion.AnswerOptions.Count}");
                     }
                     else
                     {
