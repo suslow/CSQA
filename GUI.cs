@@ -2,16 +2,16 @@ using Terminal.Gui;
 
 namespace CSQA
 {
-    class Demo
+    class GUI
     {
-        static int Main()
+        static void MainGUI()
         {
             Application.Init();
 
-            var n = MessageBox.Query(50, 7,
-                "Опрос", "Начать порос?", "Да", "Нет");
+            var n = MessageBox.Query(50, 7, "Опрос", "Начать опорос?", "Да", "Нет");
 
-            return n;
+
+            Application.Run();
         }
     }
 }
