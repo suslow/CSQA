@@ -1,6 +1,6 @@
 using Terminal.Gui;
 
-namespace CSQA1
+namespace CSQA
 {
     class GUI
     {
