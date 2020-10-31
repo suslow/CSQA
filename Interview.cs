@@ -11,7 +11,6 @@ namespace CSQA
         public Interview(Person personInfo)
         {
             this.PersonInfo = personInfo;
-
         }
         public Person PersonInfo { get; set; }
 
