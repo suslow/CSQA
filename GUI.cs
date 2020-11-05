@@ -12,11 +12,10 @@ namespace CSQA
 {
     public class GUI
     {
+        Interview interview = new Interview();
+        Interview questions = new Interview();
         public void Konsole()
         {
-            var interview = new Interview();
-            var questions = new Interview();
-
             var c = new Window();
             var consoles = c.SplitRows(
                     new Split(3, "Опрос", LineThickNess.Single),
@@ -33,14 +32,14 @@ namespace CSQA
             );
             var content = contents[0];
             var sidebar = contents[1];
-            
-            
+
+
             headline.Write("Пройдите опрос выбираяя подходящий ответ");
-            content.WriteLine($"Вопрос: {}");
+            content.WriteLine($"Вопрос: {interview.itemQuestion}");
 
             sidebar.WriteLine("Ответ ...");
 
-            status.Write("что тут");
+            status.Write("...");
             Console.ReadLine();
         }
     }

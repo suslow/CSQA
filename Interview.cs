@@ -28,6 +28,8 @@ namespace CSQA
 
         public List<ItemQuestion> Questions { get; set; }
 
+        public string test = "Текст";
+        public string itemQ;
         public void Start()
         {
             PersonInfo = new Person();
@@ -37,6 +39,8 @@ namespace CSQA
             foreach (var itemQuestion in Questions)
             {
                 Console.WriteLine($"Вопрос: {itemQuestion.Question}");
+
+                itemQ = itemQuestion.Question;
 
                 int i = 1;
 
@@ -84,8 +88,13 @@ namespace CSQA
                 PersonInfo.Answers.Add(itemQuestion.AnswerOptions[indexAnswer - 1]);
             }
             Console.WriteLine("Конец опроса");
+            Console.WriteLine($"itemq {itemQ}");
         }
-
+        public void Test()
+        {
+            Interview testvar = new Interview();
+            Console.WriteLine($"testvar out: {testvar.itemQ}");
+        }
         void GetPersonInfo()
         {
             bool result;

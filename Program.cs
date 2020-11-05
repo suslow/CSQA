@@ -12,7 +12,9 @@ namespace CSQA
 
             do
             {
+                // Console.WriteLine($"test out: {interview.itemQ}");
                 gui.Konsole();
+                // interview.Test();
                 // interview.Start();
                 // interview.Result();
                 // Console.WriteLine("Чтобы завершить опрос нажмите - {Q}");
