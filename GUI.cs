@@ -12,8 +12,14 @@ namespace CSQA
 {
     public class GUI
     {
-        Interview interview = new Interview();
+        Interview interview;
         Interview questions = new Interview();
+
+        public GUI(Interview intTest)
+        {
+            interview = intTest;
+        }
+
         public void Konsole()
         {
             var c = new Window();
@@ -35,7 +41,7 @@ namespace CSQA
 
 
             headline.Write("Пройдите опрос выбираяя подходящий ответ");
-            content.WriteLine($"Вопрос: {interview.itemQuestion}");
+            content.WriteLine($"Вопрос: {interview.itemQ}");
 
             sidebar.WriteLine("Ответ ...");
 

@@ -6,8 +6,8 @@ namespace CSQA
     {
         static void Main(string[] args)
         {
-            var gui = new GUI();
             var interview = new Interview();
+            var gui = new GUI(interview);
             interview.InitTest();
 
             do
