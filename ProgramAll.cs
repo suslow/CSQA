@@ -136,6 +136,7 @@ namespace CSQA
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             var c = new Window();
+            c.ForegroundColor = ConsoleColor.DarkCyan;
             var consoles = c.SplitRows(
                     new Split(3, "Опрос", LineThickNess.Single),
                     new Split(0),
