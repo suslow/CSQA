@@ -46,6 +46,10 @@ namespace CSQA
                 question1,
                 question2
             };
+            Console.WriteLine($"Првоерка квестионс: {Questions}");
+        }
+        public void Test()
+        {
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -78,7 +82,6 @@ namespace CSQA
         {
             string itemQ = null;
             Program PerInf = new Program();
-
             Console.WriteLine("Начало опроса");
             foreach (var itemQuestion in PerInf.Questions)
             {
